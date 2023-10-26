@@ -9,8 +9,15 @@ import {
   Text,
   useBreakpointValue,
 } from '@chakra-ui/react'
+import { useState } from 'react';
 
 export default function SplitScreen() {
+
+    const [color, SetColor] = useState(false);
+
+    const changeColor = () => {
+        SetColor(color == false ? true : false)
+    }
   return (
     <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
       <Flex p={8} flex={1} align={'center'} justify={'center'}>
@@ -43,11 +50,13 @@ export default function SplitScreen() {
           <Stack direction={{ base: 'column', md: 'row' }} spacing={4}>
             <Button
               rounded={'full'}
-              bg={'blue.400'}
+              bg={color == false ? 'blue.400' : 'orange.400'}
               color={'white'}
               _hover={{
                 bg: 'blue.500',
-              }}>
+              }}
+              onClick={changeColor}
+              >
               Create Project
             </Button>
             <Button rounded={'full'}>How It Works</Button>
