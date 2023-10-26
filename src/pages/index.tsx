@@ -1,4 +1,7 @@
 import Head from 'next/head'
+import WithSubnavigation from '@/components/navbar'
+import LargeWithLogoCentered from '@/components/footer'
+import SplitScreen from '@/components/body'
 
 export default function Home() {
   return (
@@ -11,7 +14,9 @@ export default function Home() {
       </Head>
 
       <main>
-
+        <WithSubnavigation/>
+        <SplitScreen/>
+        <LargeWithLogoCentered/>
       </main>
     </>
   )
